@@ -10,7 +10,7 @@ import ttkbootstrap as ttkth
 from turtle import heading
 import datetime
 
-#-----------------Functions for the DB
+#----------------- Functions for the DB
 def myDB():
     if not os.path.exists("prizes"):
         varConnect=sqlite3.connect('./prizes')
@@ -28,7 +28,6 @@ def myDB():
         messagebox.showwarning("Warning!","DB already exists")
     
 def showDB():
-    
     varConnect=sqlite3.connect("prizes")
     varCursor=varConnect.cursor()
     varCursor.execute("SELECT * FROM prizes")
@@ -66,7 +65,6 @@ def openLicencse():
     webbrowser.open_new("https://github.com/charles8ff/AB1_PROGRAMMING/blob/main/LICENSE")
 
 def create():
-    
     isAnAmount=targetAmount.get()
     splitDate=targetDate.get()
     isADate=True
@@ -93,7 +91,7 @@ def create():
         myConnect=sqlite3.connect("prizes")
         myCursor=myConnect.cursor()
         myCursor.execute("""INSERT INTO prizes
-                VALUES(NULL,?,?,? )""", myTuple)
+                VALUES(NULL,?,?,? )""", myTuple) #inserts into DB
         myConnect.commit()
         messagebox.showinfo("DB", "Successfully inserted data.")
     else:
@@ -137,7 +135,7 @@ def deleteEntries():
     else:
         messagebox.showwarning("DB", "Please select an ID")
     
-# ------------------window funcions
+# ------------------ Window funcions
 
 root = ttkth.Window(themename="solar")
 # root.title("lotoApp")
@@ -161,7 +159,7 @@ topMenu.add_cascade(label= "DB", menu=dbMenu)
 topMenu.add_cascade(label= "Clear fields", menu=deleteMenu)
 topMenu.add_cascade(label= "Help", menu=helpMenu)
 
-# ------------------------ fields
+# ------------------------ Fields
 
 upperFrame =Frame(root)
 upperFrame.pack()
@@ -183,7 +181,7 @@ myFrameAmount.grid(row=2, column=1, padx=10, pady= 10)
 myFrameAmount =Entry(upperFrame, textvariable=targetAmount)
 myFrameAmount.grid(row=3, column=1, padx=10, pady= 10)
 
-# ----------------------- labels
+# ----------------------- Labels
 
 labelID=Label(upperFrame, text="Id:")
 labelID.grid(row=0, column=0, sticky="e", padx=10, pady=10)
@@ -197,7 +195,7 @@ labelDate.grid(row=2, column=0, sticky="e", padx=10, pady=10)
 labelAmount=Label(upperFrame, text="Amount:")
 labelAmount.grid(row=3, column=0, sticky="e", padx=10, pady=10)
 
-# ----------------- buttons
+# ----------------- Lower Buttons
 
 lowerFrame=Frame(root)
 lowerFrame.pack()
