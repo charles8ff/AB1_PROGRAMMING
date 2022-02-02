@@ -184,7 +184,7 @@ myFrameName.grid(row = 1, column = 1, padx = 10, pady = 10)
 myFrameAmount = Entry(upperFrame, textvariable = targetDate)
 myFrameAmount.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-myFrameAmount = Entry(upperFrame, textvariable=targetAmount)
+myFrameAmount = Entry(upperFrame, textvariable = targetAmount)
 myFrameAmount.grid(row = 3, column = 1, padx = 10, pady = 10)
 
 #---- Labels to the inputs
