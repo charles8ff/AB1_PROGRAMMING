@@ -1,11 +1,14 @@
 import os.path
 import sqlite3  # Import for the database
 import datetime # Import to check if dates are valid
+
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox # Imports to make windows
+
 from turtle import heading 
 import webbrowser # Import to open a link
+
 import ttkbootstrap as ttkth
 from ttkbootstrap.constants import * # Imports for theme
 
