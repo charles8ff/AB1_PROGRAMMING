@@ -69,7 +69,7 @@ def clearFields():
 
 #---- Open the licence of this program
 def openLicencse():
-    webbrowser.open_new("https://github.com/charles8ff/AB1_PROGRAMMING/blob/main/LICENSE")
+    webbrowser.open_new("https://github.com/charles8ff/AB2_PROGRAMMING/blob/main/LICENSE")
 
 #---- Checks the data and creates a new entry into the Database
 def create():
